@@ -47,6 +47,8 @@ const SeeNotifications = lazy(() => import("./page/dashboard/child/notifications
 
 
 const Schedule = lazy(() => import("./page/dashboard/children/Schedule"))
+const Schedules = lazy(() => import("./page/dashboard/child/schedule/Schedules"))
+const SetSchedule = lazy(() => import("./page/dashboard/child/schedule/SetSchedule"))
 
 const Feedback = lazy(() => import("./page/dashboard/children/Feedback"))
 const SeeFeedback = lazy(() => import("./page/dashboard/child/feedback/SeeFeedback"))
@@ -195,7 +197,17 @@ const App = () => {
                     },
                     {
                       path: "schedule",
-                      element: <Schedule />
+                      element: <Schedule />,
+                      children: [
+                        {
+                          index: true,
+                          element: <SetSchedule />
+                        },
+                        {
+                          path: "schedules",
+                          element: <Schedules />
+                        }
+                      ]
                     }
                   ]
                 }
