@@ -37,6 +37,10 @@ const AllAttendance = lazy(() => import("./page/dashboard/child/attendance/AllAt
 
 
 const Reports = lazy(() => import("./page/dashboard/children/Reports"))
+const RemoveReports = lazy(() => import("./page/dashboard/child/reports/RemoveReports"))
+const SetReports = lazy(() => import("./page/dashboard/child/reports/SetReports"))
+
+
 const Notifications = lazy(() => import("./page/dashboard/children/Notifications"))
 const Schedule = lazy(() => import("./page/dashboard/children/Schedule"))
 const Feedback = lazy(() => import("./page/dashboard/children/Feedback"))
@@ -135,13 +139,23 @@ const App = () => {
                         },
                         {
                           path: "attendance",
-                          element: <AddAttendance/>
+                          element: <AddAttendance />
                         }
                       ]
                     },
                     {
                       path: "reports",
-                      element: <Reports />
+                      element: <Reports />,
+                      children: [
+                        {
+                          index: true,
+                          element: <RemoveReports />
+                        },
+                        {
+                          path: "reports",
+                          element: <SetReports />
+                        }
+                      ]
                     },
                     {
                       path: "notifications",
