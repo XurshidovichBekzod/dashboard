@@ -9,7 +9,7 @@ const Dashboard = () => {
                 <h1>IT Academy</h1>
                 <ul className='collection'>
                     <li>
-                        <NavLink className={'sidebarLink'} to={""}>Students</NavLink>
+                        <NavLink className={'sidebarLink'} to={"students"}>Students</NavLink>
                     </li>
                     <li >
                         <NavLink className={'sidebarLink'} to={"courses"}>Courses</NavLink>
