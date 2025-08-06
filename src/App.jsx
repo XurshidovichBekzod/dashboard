@@ -26,6 +26,10 @@ const NewPayment = lazy(() => import("./page/dashboard/child/payments/NewPayment
 
 
 const Groups = lazy(() => import("./page/dashboard/children/Groups"))
+const AddGroups = lazy(() => import("./page/dashboard/child/groups/AddGroups"))
+const AllGroups = lazy(() => import("./page/dashboard/child/groups/AllGroups"))
+
+
 const Attendance = lazy(() => import("./page/dashboard/children/Attendance"))
 const Reports = lazy(() => import("./page/dashboard/children/Reports"))
 const Notifications = lazy(() => import("./page/dashboard/children/Notifications"))
@@ -88,7 +92,6 @@ const App = () => {
                         }
                       ]
                     },
-
                     {
                       path: "payments",
                       element: <Payments />,
@@ -105,7 +108,17 @@ const App = () => {
                     },
                     {
                       path: "groups",
-                      element: <Groups />
+                      element: <Groups />,
+                       children: [
+                        {
+                          index: true,
+                          element: <AllGroups />
+                        },
+                        {
+                          path: "group",
+                          element: <AddGroups />
+                        }
+                      ]
                     },
                     {
                       path: "attendance",
