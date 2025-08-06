@@ -42,8 +42,13 @@ const SetReports = lazy(() => import("./page/dashboard/child/reports/SetReports"
 
 
 const Notifications = lazy(() => import("./page/dashboard/children/Notifications"))
+
 const Schedule = lazy(() => import("./page/dashboard/children/Schedule"))
+
 const Feedback = lazy(() => import("./page/dashboard/children/Feedback"))
+const SeeFeedback = lazy(() => import("./page/dashboard/child/feedback/SeeFeedback"))
+const CheackFeedback = lazy(() => import("./page/dashboard/child/feedback/CheackFeedback"))
+
 
 const App = () => {
   return (
@@ -163,7 +168,17 @@ const App = () => {
                     },
                     {
                       path: "feedback",
-                      element: <Feedback />
+                      element: <Feedback />,
+                      children: [
+                        {
+                          index: true,
+                          element: <SeeFeedback />
+                        },
+                        {
+                          path: "feedback",
+                          element: <CheackFeedback />
+                        }
+                      ]
                     },
                     {
                       path: "schedule",
