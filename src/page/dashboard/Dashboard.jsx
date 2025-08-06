@@ -9,34 +9,34 @@ const Dashboard = () => {
                 <h1>IT Academy</h1>
                 <ul className='collection'>
                     <li>
-                        <NavLink to={""}>Students</NavLink>
+                        <NavLink className={'sidebarLink'} to={""}>Students</NavLink>
+                    </li>
+                    <li >
+                        <NavLink className={'sidebarLink'} to={"courses"}>Courses</NavLink>
                     </li>
                     <li>
-                        <NavLink to={"courses"}>Courses</NavLink>
+                        <NavLink className={'sidebarLink'} to={"teachers"}>Teacher</NavLink>
                     </li>
                     <li>
-                        <NavLink to={"teachers"}>Teacher</NavLink>
+                        <NavLink className={'sidebarLink'} to={"payments"}>Payments</NavLink>
                     </li>
                     <li>
-                        <NavLink to={"payments"}>Payments</NavLink>
+                        <NavLink className={'sidebarLink'} to={"groups"}>Groups</NavLink>
                     </li>
                     <li>
-                        <NavLink to={"groups"}>Groups</NavLink>
+                        <NavLink className={'sidebarLink'} to={"attendance"}>Attendance</NavLink>
                     </li>
                     <li>
-                        <NavLink to={"attendance"}>Attendance</NavLink>
-                    </li>   
-                    <li>
-                        <NavLink to={"reports"}>Reports</NavLink>
+                        <NavLink className={'sidebarLink'} to={"reports"}>Reports</NavLink>
                     </li>
                     <li>
-                        <NavLink to={"notifications "}>Notifications</NavLink>
+                        <NavLink className={'sidebarLink'} to={"notifications"}>Notifications</NavLink>
                     </li>
                     <li>
-                        <NavLink to={"feedback"}>Feedback </NavLink>
+                        <NavLink className={'sidebarLink'} to={"feedback"}>Feedback </NavLink>
                     </li>
                     <li>
-                        <NavLink to={"schedule"}>Schedule</NavLink>
+                        <NavLink className={'sidebarLink'} to={"schedule"}>Schedule</NavLink>
                     </li>
                 </ul>
             </div>
