@@ -16,6 +16,10 @@ const NewCourse = lazy(() => import("./page/dashboard/child/courses/NewCourse"))
 
 
 const Teachers = lazy(() => import("./page/dashboard/children/Teachers"))
+const AllTeacher = lazy(() => import("./page/dashboard/child/teacher/AllTeacher"))
+const NewTeacher = lazy(() => import("./page/dashboard/child/teacher/NewTeacher"))
+
+
 const Payments = lazy(() => import("./page/dashboard/children/Payments"))
 const Groups = lazy(() => import("./page/dashboard/children/Groups"))
 const Attendance = lazy(() => import("./page/dashboard/children/Attendance"))
@@ -52,8 +56,6 @@ const App = () => {
                         }
                       ]
                     },
-
-
                     {
                       path: "courses",
                       element: <Courses />,
@@ -70,7 +72,17 @@ const App = () => {
                     },
                     {
                       path: "teachers",
-                      element: <Teachers />
+                      element: <Teachers />,
+                      children: [
+                        {
+                          index: true,
+                          element: <AllTeacher />
+                        },
+                        {
+                          path: "newTeacher",
+                          element: <NewTeacher />
+                        }
+                      ]
                     },
                     {
                       path: "payments",
