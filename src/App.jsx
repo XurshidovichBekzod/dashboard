@@ -31,6 +31,11 @@ const AllGroups = lazy(() => import("./page/dashboard/child/groups/AllGroups"))
 
 
 const Attendance = lazy(() => import("./page/dashboard/children/Attendance"))
+const AddAttendance = lazy(() => import("./page/dashboard/child/attendance/AddAttendance"))
+const AllAttendance = lazy(() => import("./page/dashboard/child/attendance/AllAttendance"))
+
+
+
 const Reports = lazy(() => import("./page/dashboard/children/Reports"))
 const Notifications = lazy(() => import("./page/dashboard/children/Notifications"))
 const Schedule = lazy(() => import("./page/dashboard/children/Schedule"))
@@ -109,7 +114,7 @@ const App = () => {
                     {
                       path: "groups",
                       element: <Groups />,
-                       children: [
+                      children: [
                         {
                           index: true,
                           element: <AllGroups />
@@ -122,7 +127,17 @@ const App = () => {
                     },
                     {
                       path: "attendance",
-                      element: <Attendance />
+                      element: <Attendance />,
+                      children: [
+                        {
+                          index: true,
+                          element: <AllAttendance />
+                        },
+                        {
+                          path: "attendance",
+                          element: <AddAttendance/>
+                        }
+                      ]
                     },
                     {
                       path: "reports",
