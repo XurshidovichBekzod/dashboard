@@ -58,7 +58,7 @@ const CheackFeedback = lazy(() => import("./page/dashboard/child/feedback/Cheack
 const App = () => {
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div className='loading'>IT Academy</div>}>
         {
           useRoutes([
             {

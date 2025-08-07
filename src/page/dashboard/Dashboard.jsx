@@ -2,6 +2,8 @@ import React from 'react'
 import "./Dashboard.css"
 import Header from '../../components/header/Header'
 import { NavLink, Outlet } from 'react-router-dom'
+import { HiOutlineLogin } from "react-icons/hi";
+
 const Dashboard = () => {
     return (
         <div className='dashboard'>
@@ -38,7 +40,12 @@ const Dashboard = () => {
                     <li>
                         <NavLink className={'sidebarLink'} to={"schedule"}>Schedule</NavLink>
                     </li>
+                    <div className='btn'>
+                        <HiOutlineLogin />
+                        Log out
+                    </div>
                 </ul>
+
             </div>
             <div className='content'>
                 <Header />
